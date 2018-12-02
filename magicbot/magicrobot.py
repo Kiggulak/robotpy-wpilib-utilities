@@ -77,6 +77,9 @@ class MagicRobot(wpilib.SampleRobot, metaclass=OrderedClass):
         self.__nt.putBoolean("is_simulation", self.isSimulation())
         self.__nt.putBoolean("is_ds_attached", self.ds.isDSAttached())
 
+        if hasattr(self, "setup"):
+            self.setup()
+
     def createObjects(self):
         """
             You should override this and initialize all of your wpilib
